@@ -1,0 +1,182 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>regista premium</title>
+      <link rel="stylesheet" href="style.css">
+      <!-- Bootstrap -->
+      <link href="library/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script src="library/js/index.js" type="text/javascript"></script>
+      <script src="library/js/template.js" type="text/javascript"></script>
+    </head>
+    <body>
+      <!-- header -->
+      <script type="text/javascript">header();</script>
+      <!-- navigation -->
+      <script type="text/javascript">navigation();</script>
+      <script type="text/javascript">spNavigation();</script>
+
+      <!-- contents -->
+      <div class="wrapper">
+        <div class="container">
+          <h2>お問い合わせ</h2>
+            <!-- 申し込みフォーム -->
+          <form action='mail.php' id='contact_form' method='post'>
+            <div class="form-box">
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>お名前（必須）</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" name="お名前" class="form-control" placeholder="（例）山田花子">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>ふりがな（必須）</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" name="ふりがな" class="form-control" placeholder="（例）やまだはなこ">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>メールアドレス（必須）</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" name="Email" class="form-control" id='Email' placeholder="（例）xxxxxxx@xxx.jp">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>電話番号</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" name="電話番号" class="form-control" placeholder="（例）090-xxxx-xxxx">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>住所</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" name="住所" class="form-control" placeholder="（例）東京都✕✕✕">
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>年齢</label>
+                      </div>
+                      <div class="col-md-8">
+                        <select class="form-control" name="ご年齢">
+                          <option selected>年齢を選択してください</option>
+                          <option value="20代" name="ご年齢">20代</option>
+                          <option value="30代" name="ご年齢">30代</option>
+                          <option value="40代" name="ご年齢">40代</option>
+                          <option value="50代" name="ご年齢">50代</option>
+                          <option value="60代" name="ご年齢">60代</option>
+                        </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-md-4">
+                          <label>職業</label>
+                      </div>
+                      <div class="col-md-8">
+                        <select class="form-control" name="ご職業">
+                          <option selected>職業を選択してください</option>
+                          <option value="営業系" name="ご職業">営業系</option>
+                          <option value="事務系" name="ご職業">事務系</option>
+                          <option value="技術系" name="ご職業">技術系</option>
+                          <option value="専門系" name="ご職業">専門系</option>
+                          <option value="医療系" name="ご職業">医療系</option>
+                          <option value="公務員" name="ご職業">公務員</option>
+                          <option value="会社経営・役員" name="ご職業">会社経営・役員</option>
+                          <option value="専業主婦・パート" name="ご職業">専業主婦・パート</option>
+                          <option value="その他" name="ご職業">その他</option>
+                        </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-date-input" class="col-md-4 col-form-label">面談希望日程</label>
+                <div class="col-md-8">
+                  <input class="form-control" name="面談希望日程" type="date" value="2016-11-01" id="example-date-input">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                      <label>面談希望時間</label>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="面談希望時間" value="10-12"><b>10:00~12:00</b>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="面談希望時間" value="12-14"><b>12:00~14:00</b>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="面談希望時間" value="14-16"><b>14:00~16:00</b>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="面談希望時間" value="16-18"><b>16:00~18:00</b>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="面談希望時間" value="18-20"><b>18:00~20:00</b>
+                        </label>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <div class="col-md-4">
+                      <label>その他ご質問</label>
+                  </div>
+                  <div class="col-md-8">
+                    <textarea class="form-control" id="exampleTextarea" name='その他ご質問' rows="3" placeholder="その他ご質問"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <h4 class="bold">電話でのお問い合わせ（受付時間：10:00 ~ 20:00）<br>03-5817-8315</h4>
+            <div class="row">
+              <div class="col-md-12 con-btn-box">
+                <button type="submit" class="btn btn-success submit_btn btn-lg contact-btn">お問い合わせ</button>
+              </div>
+            </div>
+          </form>
+        </div><!-- container -->
+      </div><!-- wrapper -->
+
+      <!-- footer -->
+      <script type="text/javascript">footer();</script>
+    </body>
+  </html>
