@@ -1,52 +1,4 @@
-$(function() {
-  // 置換の対象とするclass属性。
-  var $elem = $('.variable-image');
-  // 置換の対象とするsrc属性の末尾の文字列。
-  var sp = '_sp.';
-  var pc = '_pc.';
-  // 画像を切り替えるウィンドウサイズ。
-  var replaceWidth = 768;
-
-  function imageSwitch() {
-    // ウィンドウサイズを取得する。
-    var windowWidth = parseInt($(window).width());
-
-    // ページ内にあるすべての`.js-image-switch`に適応される。
-    $elem.each(function() {
-      var $this = $(this);
-      // ウィンドウサイズが768px以上であれば-spを-pcに置換する。
-      if(windowWidth >= replaceWidth) {
-        $this.attr('src', $this.attr('src').replace(sp, pc));
-
-      // ウィンドウサイズが768px未満であれば-pcを-spに置換する。
-      } else {
-        $this.attr('src', $this.attr('src').replace(pc, sp));
-      }
-    });
-  }
-  imageSwitch();
-
-  // 動的なリサイズは操作後0.2秒経ってから処理を実行する。
-  var resizeTimer;
-  $(window).on('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      imageSwitch();
-    }, 200);
-  });
-});
-$(function() {
-  $('a#to_form_link').click(function() {
-    var speed = 600;
-    var target = $("#form");
-    // var target = $(href == "#" || href == "" ? 'html' : href );
-    var position = target.offset().top;
-    $('body, html').animate({scrollTop:position}, speed, 'easeInOutCubic');
-  });
-});
-
-$(document).ready(function () {
-
+function activateCurrentPageTab() {
   var url = window.location.pathname;
 
   if (/index/.test(url)) {
@@ -68,24 +20,17 @@ $(document).ready(function () {
     $('.navigation li').removeClass("active");
     $('#contact').addClass("active");
   };
+}
 
-});
+function addNavToggleEventHandler() {
+  $('#navToggle').click(function(){//headerに .openNav を付加・削除
+    // console.log("ハンバーガーメニュー")
+    $('body').toggleClass('openNav');
+  });
+}
 
-$(function() {
-    $('#navToggle').click(function(){//headerに .openNav を付加・削除
-      console.log("ハンバーガーメニュー")
-        $('body').toggleClass('openNav');
-    });
-});
-
-
-//top戻るボタン
-
-// グローバル変数
-var syncerTimeout = null ;
-
-// 一連の処理
-$( function() {
+function setBackToTopButton() {
+  var syncerTimeout = null ;
   // スクロールイベントの設定
   $( window ).scroll( function() {
     // 1秒ごとに処理
@@ -121,8 +66,50 @@ $( function() {
   // クリックイベントを設定する
   $( '#move-page-top' ).click(
     function() {
-      // スムーズにスクロールする
       $( 'html,body' ).animate( {scrollTop:0},'slow');
     }
   );
+}
+
+function moveToContentIfSpecified() {
+  var url = jQuery(location).attr('href');
+
+  if (url.indexOf("?id=") != -1) {
+    scrollToSpecifiedIdItem(url);
+  }
+}
+
+function scrollToSpecifiedIdItem(url) {
+  var url_sp = url.split("?id=");
+  var hash   = '#' + url_sp[url_sp.length - 1];
+  var tgt    = $(hash);
+  var pos    = tgt.offset().top;
+  $("html, body").animate({scrollTop:pos}, 400, "swing");
+}
+
+function isSameUrl(url) {
+  var currentWindowPath = window.location.href.match(".+/(.+?)([\?#;].*)?$")[1];
+  var urlPath = url.match(".+/(.+?)([\?#;].*)?$")[1];
+  return currentWindowPath === urlPath;
+}
+
+function addEventHandlerOnMenuClick() {
+  $('ul.list-sub li a').on('click', function(e) {
+    var url = e.target.href
+
+    if (isSameUrl(url)) {
+      e.preventDefault();
+      scrollToSpecifiedIdItem(url);
+    } else {
+      // do nothing because of default url's transition
+    }
+  });
+}
+
+$(document).ready(function () {
+  activateCurrentPageTab();
+  addNavToggleEventHandler();
+  setBackToTopButton();
+  moveToContentIfSpecified();
+  addEventHandlerOnMenuClick();
 });
