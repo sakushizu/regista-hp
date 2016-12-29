@@ -21,26 +21,71 @@
       <!-- header -->
       <script type="text/javascript">header();</script>
 
-      <script type="text/javascript">navigation();</script>
       <script type="text/javascript">spNavigation();</script>
 
-      <div class="wrapper">
+      <!-- logo menubar -->
+      <div class="container">
+        <div class="clearfix">
+          <a href="index.html"><img src="images/logo.png" class="width" id="logo"></a>
+          <a href="contact.html"><img src="images/contact-button.png" class="pull-right"></a>
+        </div>
+        <div class="menu">
+          <ul class="list-parent">
+            <li><a href="index.html">ホーム<span class="sub-text"><br>home</span></a>
+              <ul class="list-sub">
+                <li><a href="index.html?id=1">選ばれている理由</a></li>
+                <li><a href="index.html?id=1">お知らせ</a></li>
+                <li><a href="index.html?id=2">お問い合わせ</a></li>
+                <li><a href="index.html?id=2">Q&A</a></li>
+              </ul>
+            </li>
+            <li><a href="appeal.html">不動産投資の魅力<span class="sub-text"><br>
+attractiveness of investment</span></a>
+               <ul class="list-sub">
+                 <li><a href="appeal.html?id=1">私的年金の確保</a></li>
+                 <li><a href="appeal.html?id=2">節税対策</a></li>
+                 <li><a href="appeal.html?id=3">生命保険の役割</a></li>
+                 <li><a href="appeal.html?id=4">資産の目減りを防ぐ</a></li>
+               </ul>
+            </li>
+            <li><a href="reason.html">選ばれている理由<span class="sub-text"><br>reasons of selection</span></a>
+               <ul class="list-sub">
+                 <li><a href="reason.html?id=1">専属コンサルタント</a></li>
+                 <li><a href="reason.html?id=2">市場価値の高い物件供給</a></li>
+                 <li><a href="reason.html?id=3">安心の家賃保証サービス</a></li>
+                 <li><a href="reason.html?id=4">サポート体制</a></li>
+               </ul>
+            </li>
+            <li><a href="Q&A.html">マンション経営Q&A<span class="sub-text"><br>management Q&A</span></a></li>
+            <li><a href="campany_info.html">会社概要<span class="sub-text"><br>company information</span></a>
+               <ul class="list-sub">
+                 <li><a href="campany_info.html?id=1">会社概要</a></li>
+                 <li><a href="campany_info.html?id=2">企業目標</a></li>
+                 <li><a href="campany_info.html?id=3">アクセス</a></li>
+               </ul>
+            </li>
+            <li><a href="contact.html">お問い合わせ<span class="sub-text"><br>contact form</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrapper margin-top">
         <div class="flexslider">
           <ul class="slides"><!-- 必ずクラスは slides -->
             <li>
               <img src="images/top1.png" class="img"><!-- 表示させたい項目を<li>に囲んで並べる -->
             </li>
             <li>
-              <img src="images/top2.jpg" class="img">
+              <img src="images/top2.png" class="img">
             </li>
             <li>
-              <img src="images/top3.jpg" class="img">
+              <img src="images/top3.png" class="img">
             </li>
             <li>
-              <img src="images/top4.jpg" class="img">
+              <img src="images/top4.png" class="img">
             </li>
             <li>
-              <img src="images/top5.jpg" class="img">
+              <img src="images/top5.png" class="img">
             </li>
             <li>
               <img src="images/top6.png" class="img">
@@ -48,7 +93,7 @@
           </ul>
         </div>
 
-        <div class="container">
+        <div class="container" id="1">
           <div>
             <div class="col-md-6 media-margin top-contents" style="margin-bottom: 35px;">
               <a href="reason.html"><img src="images/selecting-result.png" class="img"></a>
@@ -63,7 +108,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div id="2">
             <div class="col-md-6 media-margin">
               <a href="contact.html"><img src="images/contact-call-girl.png" class="img"></a>
             </div>
